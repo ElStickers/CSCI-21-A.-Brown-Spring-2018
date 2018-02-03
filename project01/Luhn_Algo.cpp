@@ -37,6 +37,7 @@ int main() {
     ifstream fin("card_numbers.txt");
     
     //Output Stream Declaration
+    ofstream fout("card_check.txt");
     //ofstream fout("card_check.txt");
     
     //Making sure both file open correctly
@@ -58,25 +59,43 @@ int main() {
         
         cout << "This is a Visa card.\n\n";
         
+        fout << line << " This is a Visa card.\n\n";
+        
         }
-        //we check for number three if 
+        //check if number 3 is in position 0 
         else if (line.at(0) == '3'){
             
+            //continues to check second number for numbers known to be in American Express id.
             if (line.at(1) == '4' || line.at(1) == '7'){
             
-            cout << "This is an American Express card.\n\n" << endl;
+            cout << "This is an American Express card.\n\n";
             
-            }else cout << "Unknown Card Number.\n\n";
+            fout << line << " This is an American Express card.\n\n";
+            
+            }
+            
+            else cout << "Unknown Card Number.\n\n";
         }
+       //check if first number equals 5
         else if (line.at(0) == '5'){
             
+            //checks second number against known numbers to be part of Master Card id.
             if (line.at(1) == '1' || line.at(1) == '2' || line.at(1) == '3' || line.at(1) == '4' || line.at(1) == '5'){
             
-            cout << "This is a Master Card card.\n\n" << endl;
+            cout << "This is a Master Card card.\n\n";
             
-            }else cout << "Unknown Card Number.\n\n";
+            }
             
-        } //end of digit check loop
+            else cout << "Unknown Card Number.\n\n";
+            
+        }
+        
+        else if (line.find("6011") == 0){
+            
+            cout << "this is a discover.\n\n";
+            
+        }
+        //end of digit check loop
         
     }//end of file read loop
     
