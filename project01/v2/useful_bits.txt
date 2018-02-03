@@ -1,0 +1,17 @@
+  getline (cardin, line);
+  
+  cout << line << endl;
+  
+  int i;
+  
+  int number[i];
+  
+  for (i = 0; i < line.size(); i++){
+      
+      number[i] = line.at(i) - '0';
+  }
+  
+  cout << number[];
+  
+  
+  
