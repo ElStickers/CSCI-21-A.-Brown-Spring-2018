@@ -5,7 +5,7 @@
  */
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-
+#include "temperature.cpp"
 #include "temperature.h"
 // Double Include to Check for Header Guards
 #include "temperature.h"
