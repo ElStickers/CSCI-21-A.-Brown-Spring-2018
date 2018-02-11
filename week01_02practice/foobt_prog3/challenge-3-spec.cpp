@@ -87,3 +87,7 @@ class WordList {
 		vector<string> words;
 		bool allowDupes;
 };
+
+WordList::WordList
+
+bool WordList::addWord ()

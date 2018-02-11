@@ -1,11 +1,11 @@
 /*
- * Name        : lab_6.cpp
+ * Name        : lab_6.h
  * Author      : Luke Sathrum
  * Description : Header File for Lab #6. DO NOT ALTER!
  */
 
-#ifndef LAB_H
-#define LAB_H
+#ifndef LAB_6_H
+#define LAB_6_H
 
 #include <iostream>
 #include <string>

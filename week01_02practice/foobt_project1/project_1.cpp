@@ -21,29 +21,25 @@ using std::stringstream;
  *              in theString (may be 0)
  */
 void countCharacters (string theString, uint32_t& alpha, uint32_t& num) {
-    
-    stringstream ss;
-    
-    ss << theString;
-    
-    
-    for ( int i = 0; i < ss.gcount(); i++) {
-        
-        if ( isalpha(theString[i])) {
-            
-            alpha = 0;
-            
-            alpha ++;
-        }
-        
-        else if ( isdigit(theString[i])) {
-           
-            num = 0;
-           
-            num ++;
-        }
-    }
-
+	
+	alpha = 0;
+	
+	num = 0;
+	
+	if (theString != "") {
+		
+		for (int i = i; i < theString.size(); i++) {
+			
+			if (isalpha(theString.at(i))) {
+				
+				alpha++;
+			}
+			else if (isdigit(theString.at(i))) {
+				
+				num++;
+			}
+		}
+	}
 }
 
 /*
@@ -55,7 +51,32 @@ void countCharacters (string theString, uint32_t& alpha, uint32_t& num) {
  *         uppercase/lowercase; empty string argument returns empty string
  */
 string upAndDown (string theString) {
-	return string("");
+	
+    if (theString != "") {
+    
+        for (int i = 0; i < theString.size(); i++) {
+    
+            if (i % 2 == 0) {
+            	
+            	theString.at(i) = toupper(theString.at(i));
+
+            }
+    
+            else {
+    
+                theString.at(i) = tolower(theString.at(i));
+    
+            }
+    
+        }
+    
+        return theString;
+    }
+   
+    else {
+   
+        return string("");
+    }
 }
 
 /*
@@ -67,7 +88,28 @@ string upAndDown (string theString) {
  *         argument; returns 0 on empty string
  */
 uint32_t countWords (string theString) {
-	return 0;
+	
+    if (theString != "") {
+    
+        int blanks = 0;
+    
+        for (int i = 0; i < theString.size(); i++) {
+    
+            if (theString.at(i) == ' ')
+    
+                blanks++;
+    
+        }
+    
+        return blanks + 1;
+    
+    }
+    
+    else {
+    
+        return 0;
+        
+    }
 }
 
 /*
@@ -76,7 +118,28 @@ uint32_t countWords (string theString) {
  * @return the average of all values in the vector
  */
 int32_t computeAverage (vector<int32_t> values) {
-	return 0;
+    
+    int avr = 0;
+    
+    for (int i = 0; i < values.size(); i++) {
+    
+        avr += values.at(i);
+    
+    }
+    
+    if (avr >= 0) {
+	
+	    return (avr / values.size());
+    }
+	
+	else {
+	
+	    avr = abs(avr);
+	
+	    return (0 - avr/values.size());
+	
+	}
+	
 }
 
 /*
@@ -85,7 +148,20 @@ int32_t computeAverage (vector<int32_t> values) {
  * @return the smallest/minimum value in the vector
  */
 int32_t findMinValue (vector<int32_t> values) {
-	return 0;
+    
+    int min = values.at(0);
+    
+    for (int i = 0; i < values.size(); i++) {
+    
+        if (min > values.at(i)) {
+    
+            min = values.at(i);
+    
+        }
+    
+    }
+	
+	return min;
 }
 
 /*
@@ -94,7 +170,20 @@ int32_t findMinValue (vector<int32_t> values) {
  * @return the largest/maximum value in the vector
  */
 int32_t findMaxValue (vector<int32_t> values) {
-	return 0;
+	
+	int max = values.at(0);
+    
+    for (int i = 0; i < values.size(); i++) {
+    
+        if (max < values.at(i)) {
+    
+            max = values.at(i);
+    
+        }
+    
+    }
+	
+	return max;
 }
 
 /*
