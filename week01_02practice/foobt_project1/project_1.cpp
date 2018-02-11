@@ -30,12 +30,16 @@ void countCharacters (string theString, uint32_t& alpha, uint32_t& num) {
     for ( int i = 0; i < ss.gcount(); i++) {
         
         if ( isalpha(theString[i])) {
+            
             alpha = 0;
+            
             alpha ++;
         }
         
         else if ( isdigit(theString[i])) {
+           
             num = 0;
+           
             num ++;
         }
     }
