@@ -1,0 +1,164 @@
+Project 1: Luhn Algorithm
+
+Part A: BIN Card Type identification
+
+- open(file to read)
+- check card type by examining first six digits, starting with first digit
+    - American Express = 34 or 35
+        - check to make sure second digit is 4 or 5
+    - Discover = 6011 or 622126 - 622925 or 644 - 649 or 65
+        - 6011 : check first 4 digits to find a match
+        - 622126 - 622925 : check first 3 digits to find 622, then verify next 3 digits fall between 126 and 925
+        - 644 - 649 : check 2nd digit to find 4, then verify 3rd digit falls between 4 and 9
+        - 65 : check if second digit is 5
+    - MasterCard = 51 - 55
+        - check if second digit falls between 1 and 5
+    - Visa = 4
+    - anything else regarded as unknown
+    
+Part B: Everything Else
+
+Pseudocode:
+
+Card (Base Class)
+
+    - card number
+    - bank type
+    - card holder first name
+    - card holder last name
+    - card type
+    - balance
+    - array of transactions
+    
+    + constructor
+    + validity check
+    + determine bank type
+    + accessors
+    + mutators
+
+Gold (Derived Class)
+    
+    - credit line
+    - overdraft allowance
+    - rebate percent
+    
+    + constructor
+    + determine denied transactions
+
+Platinum (Derived Class)
+
+    - credit line
+    - overdraft allowance
+    - rebate percent
+    
+    + constructor
+    + determine denied transactions
+
+Corporate (Derived Class)
+
+    - credit line
+    - overdraft allowance
+    - rebate percent
+    
+    + constructor
+    + determine denied transactions
+
+Transaction
+
+    - card number
+    - day
+    - month
+    - year
+    - transaction number
+    - vendor
+    - amount
+    - denial
+    
+    + accessors
+    + mutators
+
+Collection
+
+    - array of Card objects
+    - number of Card objects
+    
+    + output monthly statement
+    + fill transactions
+    + fill vector
+    + output info of specific card
+
+Process:
+
+Collection class contains vector of Card class
+open(first input file)
+if(not at end of file)
+    get current line
+    assign values in current line to corresponding Card member variable
+Card class contains vector of Transaction class
+open(second input file)
+if(not at end of file)
+    get current line
+    assign values in current line to corresponding Transaction member value
+copy remainder of transaction member values that were not in input file from the Card they belong to
+use all data contained in transaction vectors to format organized monthly bill
+    output(transactions that were denied and reason why)
+    output(list of transactions for given month with vendor, date, individual amount, and total)
+    output(total rebate value, current card balance, and overdrawn status)
+
+
+transaction is denied if
+    - overdraft amount exceeds overdraft allowance
+    - card number is invalid
+
+
+
+
+
+
+Project Description:
+
+Your application will read in two sets of input data (2 input files). 
+The first set of data includes credit card numbers, the name of the account 
+holder, the card type (gold, platinum, corporate) and the current balance on 
+each card in the format:
+
+CreditNumber FirstName LastName Type - CurrentBalance.  
+
+This data will be used to populate an array of credit card objects.
+
+The second set of data include a series of transactions.  Each transaction’s 
+data include the credit card number, the date, a transaction number, the vendor,
+and a purchase amount in the format: 
+
+CardNumber:00/00/0000:transactNumber:Vendor:amount
+
+Depending on the validity of the credit card number, the current card credit 
+balance and the credit limit, your application will decide if the transaction is 
+to be allowed or denied.  Your application will also compute the total purchase 
+made on the card, and the rebate amount.
+
+The output of your application will be a list of transactions that are denied 
+together with the reason for denial and for each valid credit card account, 
+create a monthly bill that would include the summary of purchases, the total 
+bill on the credit card, if there is an overdrawn status on the card, and the 
+rebate value.
+
+There are 3 types of credit cards:
+
+Gold Card
+
+Credit line $3,000
+Once limit is reached, the card will be blocked
+Each month, a rebate of 1% of the total monthly purchase is awarded to the account.
+
+Platinum Card
+
+Credit line is $5,000
+An overdraft of $1,000 is allowed. A warning message is issued through the account summary
+Each month, a rebate of 2% of the total monthly purchase is awarded to the account.
+
+Corporate Card
+
+Credit line of $10,000
+An overdraft of $5,000 is allowed. A warning message is issued through the account summary
+Each month, a rebate of 5% of the total monthly purchase is awarded to the account.

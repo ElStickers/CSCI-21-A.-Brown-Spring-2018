@@ -4,5 +4,6 @@
 class Bincheck{
     private:
         
-}
+};
 
+#endif

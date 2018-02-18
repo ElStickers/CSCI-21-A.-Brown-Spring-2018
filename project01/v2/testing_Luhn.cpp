@@ -13,6 +13,8 @@
 #include <sstream>
 #include <cctype>
 #include <string>
+#include <cstdlib>
+#include <vector> 
 using std::cout;
 using std::cerr;
 using std::cin;
