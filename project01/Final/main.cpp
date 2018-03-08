@@ -5,24 +5,28 @@
  * Description :    Reads credit card numbers from a file inputs the info into a or several vectors.
  *                  Then read in a transaction from a different file and match it to the stored card.
  */
- #include "card_work.h"
  
- #include <iostream>
- #include <string>
- #include <cstdlib>
- #include <chrono>
- using namespace std;
+#include <iostream>
+
+#include "cardwork.cpp"
+#include "card.cpp"
+#include "goldcard.cpp"
+#include "platinumcard.cpp"
+#include "corporatecard.cpp"
+#include "transac.cpp"
+
+using namespace std;
 
 int main() {
  
  string file1, file2;
  int choice;
  
- cout << "Please enter the name of the file holding the Credit Card Information.\nPlease don't include extensions.\n";
+ cout << "Please enter the name of the file holding the Credit Card Information.\n(Please don't include file extensions.)\n";
  cout << "File One: ";
  cin >> file1;
  
- cout << "Please enter the name of the file holding the Transaction Information.\nRememeber to exclude extensions.\n";
+ cout << "Please enter the name of the file holding the Transaction Information.\n(Please don't include file extensions.)\n";
  cout << "File Two: ";
  cin >> file2;
  
@@ -32,18 +36,20 @@ int main() {
  char status = 'y';
  while (toupper(status) == 'Y') {
  
- //CardWork populate;
+ CardWork run;
  cout << "What is it you would like to do?\n";
- cout << "[1]---View Monthly Bills\n"
-      << "[2]---View Denied Transactions\n"
+ cout << "[1]---See Denied Transactions\n"
+      << "[2]---See Monthly Billing Statement\n"
       << "[3]---Exit Program\n";
  cin >> choice;
  
+ run.Populate(file1, file2);
+ 
  if (choice == 1) {
-  
+  run.CheckDenied(file2);
  }
  else if (choice == 2) {
-  
+  run.MonthlyStatement();
  }
  else if (choice == 3) {
   cout << "Exiting Program...\n";

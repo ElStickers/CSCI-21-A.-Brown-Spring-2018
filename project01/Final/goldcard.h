@@ -10,8 +10,10 @@
  #ifndef GOLDCARD_H
  #define GOLDCARD_H
  
- #include "card_work.h"
+ #include "cardwork.h"
  #include "card.h"
+ #include "platinumcard.h"
+ #include "corporatecard.h"
  
  #include <iostream>
  #include <sstream>
@@ -35,20 +37,30 @@
   * Holds info unique to a Gold type card
   */
  class GoldCard : public Card {
-     
-     public:
-        
-        /*
-         * Consturctor
-         * Sets varibales to a default value
-         * Unless inputs are passed in
-         */
-        GoldCard();
-        
-        /*
-         * Mutator
-         * Sets line_of_credit to input
-         */
+protected:
+    
+    double credit_amount_, overdraft_allowance_;
+    
+    int rebate_;
+
+public:
+
+    GoldCard(); //Constructor, sets variables to default values unless argument is present
+
+    double credit_amount(); //Accessor, returns value of credit_amount
+ 
+    double overdraft_allowance(); //Accessor, returns value of overdraft_allowance
+ 
+    int rebate(); //Accessor, returns value of rebate_
+ 
+    void CheckDenied(); //Checks for denied transacs
+
+    void set_credit_amount(double credit_amount);//Mutator, sets credit_amount to input argument
+
+    void set_overdraft_allowance(double overdraft_allowance); //Mutator, sets overdraft_allowance to input argument
+
+    void set_rebate(int rebate); //Mutator, sets rebate_ to the input argument 
+
  };
  
  #endif

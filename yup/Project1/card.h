@@ -8,7 +8,7 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include "transaction.h"
+#include "transac.h"
 
 #include <iostream>
 #include <iomanip>
@@ -34,6 +34,14 @@ using std::stringstream;
  */
 class Card
 {
+protected:
+    string card_number_;
+    char bank_type_;
+    string first_name_;
+    string last_name_;
+    string card_type_;
+    double balance_;
+    vector<Transac> transacs_;
 public:
     /*
      * Constructor
@@ -144,21 +152,14 @@ public:
      * Sets transactions_ to the incoming double.
      * @param Transaction balance - the transactions vector to be set
      */
-    void set_transactions(vector<Transaction> transactions);
+    void set_transactions(vector<Transacs> transac);
     
     /*
      * transactions_ Accessor
      * @return Transaction - returns vector of transactions
      */
-    vector<Transaction> transactions();
-protected:
-    string card_number_;
-    char bank_type_;
-    string first_name_;
-    string last_name_;
-    string card_type_;
-    double balance_;
-    vector<Transaction> transactions_;
+    vector<Transac> transac();
+
 
 };
 
