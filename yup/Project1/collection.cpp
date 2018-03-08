@@ -146,7 +146,6 @@ void Collection::MonthlyStatement()
     cout << "(10) - October" << endl;
     cout << "(11) - November" << endl;
     cout << "(12) - December" << endl;
-    cout << "(13) - Full Transaction History" << endl;
     
     cout << endl << "Selection: ";
     int month_choice;

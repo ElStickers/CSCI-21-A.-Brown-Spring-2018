@@ -154,9 +154,9 @@ void CardWork::CheckDenied(string transacsfile) {
     
 for (int i = 0; i < gold_vec_.size(); i++) {
         
-        cout << "Denied transacs for Card Number: " << gold_vec_.at(i).card_number() << endl;
+        cout << "Denied transactions for Card Number: " << gold_vec_.at(i).card_number() << endl;
         
-        cout << "Account Holder: " << gold_vec_.at(i).first_name() << ", " << gold_vec_.at(i).last_name() << endl;
+        cout << "Account Holder: " << gold_vec_.at(i).first_name() << gold_vec_.at(i).last_name() << endl;
         
         //cout << setfill('=') << setw(55) << " " << endl;
         
@@ -170,29 +170,29 @@ for (int i = 0; i < gold_vec_.size(); i++) {
                 
                 cout << "Date: " << gold_vec_.at(i).transacs().at(trans_i).date() << endl;
                 
-                cout << "transacstion Number: " << gold_vec_.at(i).transacs().at(trans_i).transac_num() << endl;
+                cout << "Transacstion Number: " << gold_vec_.at(i).transacs().at(trans_i).transac_num() << endl;
                 
                 cout << "Vendor: " << gold_vec_.at(i).transacs().at(trans_i).vendor() << endl;
                 
                 cout << "Amount: $" << fixed << setprecision(2) << gold_vec_.at(i).transacs().at(trans_i).transac_amount() << endl;
                 
-                cout << "Reason for denied: transacstion exceeds overdraft allowance by $" 
+                cout << "Reason for denied: Transacstion exceeds overdraft allowance by $" 
                 
                      <<  gold_vec_.at(i).transacs().at(trans_i).transac_amount() - (gold_vec_.at(i).credit_amount() + gold_vec_.at(i).overdraft_allowance() + gold_vec_.at(i).balance()) << endl << endl;
             }
         
         }
         
-        cout << setfill('=') << setw(55) << " " << endl << endl;
+        cout << setfill('/') << setw(55) << " " << endl << endl;
     }
     
     for (int i = 0; i < plat_vec_.size(); i++) {
         
-        cout << "Denied transacs for Card Number: " << plat_vec_.at(i).card_number() << endl;
+        cout << "Denied transactions for Card Number: " << plat_vec_.at(i).card_number() << endl;
         
-        cout << "Account Holder: " << plat_vec_.at(i).first_name() << ", " << plat_vec_.at(i).last_name() << endl;
+        cout << "Account Holder: " << plat_vec_.at(i).first_name() << plat_vec_.at(i).last_name() << endl;
         
-        //cout << setfill('=') << setw(55) << " " << endl;
+        cout << setfill('/') << setw(55) << " " << endl;
         
         plat_vec_.at(i).CheckDenied();
         
@@ -204,13 +204,13 @@ for (int i = 0; i < gold_vec_.size(); i++) {
                 
                 cout << "Date: " << plat_vec_.at(i).transacs().at(trans_i).date() << endl;
                 
-                cout << "transacstion Number: " << plat_vec_.at(i).transacs().at(trans_i).transac_num() << endl;
+                cout << "Transacstion Number: " << plat_vec_.at(i).transacs().at(trans_i).transac_num() << endl;
                 
                 cout << "Vendor: " << plat_vec_.at(i).transacs().at(trans_i).vendor() << endl;
                 
                 cout << "Amount: $" << fixed << setprecision(2) << plat_vec_.at(i).transacs().at(trans_i).transac_amount() << endl;
                 
-                cout << "Reason for denied: transacstion exceeds overdraft allowance by $" 
+                cout << "Reason for denied: Transacstion exceeds overdraft allowance by $" 
                 
                      <<  plat_vec_.at(i).transacs().at(trans_i).transac_amount() - (plat_vec_.at(i).credit_amount() + plat_vec_.at(i).overdraft_allowance() + plat_vec_.at(i).balance()) << endl << endl;
             }
@@ -221,11 +221,11 @@ for (int i = 0; i < gold_vec_.size(); i++) {
     
     for (int i = 0; i < corp_vec_.size(); i++) {
         
-        cout << "Denied transacs for Card Number: " << corp_vec_.at(i).card_number() << endl;
+        cout << "Denied Transactions for Card Number: " << corp_vec_.at(i).card_number() << endl;
         
-        cout << "Account Holder: " << corp_vec_.at(i).last_name() << ", " << corp_vec_.at(i).first_name() << endl;
+        cout << "Account Holder: " << corp_vec_.at(i).first_name() << corp_vec_.at(i).last_name() << endl;
         
-        //cout << setfill('=') << setw(55) << " " << endl;
+        cout << setfill('/') << setw(55) << " " << endl;
         
         corp_vec_.at(i).CheckDenied();
         
@@ -237,19 +237,19 @@ for (int i = 0; i < gold_vec_.size(); i++) {
                 
                 cout << "Date: " << corp_vec_.at(i).transacs().at(trans_i).date() << endl;
                 
-                cout << "transacstion Number: " << corp_vec_.at(i).transacs().at(trans_i).transac_num() << endl;
+                cout << "Transacstion Number: " << corp_vec_.at(i).transacs().at(trans_i).transac_num() << endl;
                 
                 cout << "Vendor: " << corp_vec_.at(i).transacs().at(trans_i).vendor() << endl;
                 
                 cout << "Amount: $" << fixed << setprecision(2) << corp_vec_.at(i).transacs().at(trans_i).transac_amount() << endl;
                 
-                cout << "Reason for denied: transacstion exceeds overdraft allowance by $" 
+                cout << "Reason for denied: Transacstion exceeds overdraft allowance by $" 
                 
                      <<  corp_vec_.at(i).transacs().at(trans_i).transac_amount() - (corp_vec_.at(i).credit_amount() + corp_vec_.at(i).overdraft_allowance() + corp_vec_.at(i).balance()) << endl << endl;
             }
         }
         
-        cout << setfill('=') << setw(55) << " " << endl << endl;
+        cout << setfill('/') << setw(55) << " " << endl << endl;
     }
     
 }
@@ -356,7 +356,7 @@ void CardWork::MonthlyStatement()
             if (month_choice != 13)
                 cout << "Showing bill for month: " << month_choice_name << endl;
             cout << "Account: " << gold_vec_.at(choice).card_number() << endl;
-            cout << setfill('=') << setw(18) << "" << "transacstion History" << setw(18) << "" << endl << endl;
+            cout << setfill('/') << setw(18) << "" << "Transacstion History" << setw(18) << "" << endl << endl;
             gold_vec_.at(choice).CheckDenied();
             for (int i = 0; i < gold_vec_.at(choice).transacs().size(); i++)
             {
@@ -367,7 +367,7 @@ void CardWork::MonthlyStatement()
                 if (month_of_trans == month_choice || month_choice == 13)
                 {
                     cout << "Date: " << gold_vec_.at(choice).transacs().at(i).date() << endl;
-                    cout << "transacstion Number: " << gold_vec_.at(choice).transacs().at(i).transac_num() << endl;
+                    cout << "Transacstion Number: " << gold_vec_.at(choice).transacs().at(i).transac_num() << endl;
                     cout << "Vendor: " << gold_vec_.at(choice).transacs().at(i).vendor() << endl;
                     cout << "Amount: $" << fixed << setprecision(2) << gold_vec_.at(choice).transacs().at(i).transac_amount() << endl;
                     if (gold_vec_.at(choice).transacs().at(i).denied())
@@ -375,7 +375,7 @@ void CardWork::MonthlyStatement()
                     cout << endl;
                 }
             }
-            cout << setfill('=') << setw(56) << " " << endl << endl;
+            cout << setfill('/') << setw(56) << " " << endl << endl;
             cout << "Current Card Balance (before rebate): $" << fixed << setprecision(2) << gold_vec_.at(choice).balance() << endl;
             cout << "Rebate: " << gold_vec_.at(choice).rebate() << "%" << endl;
             cout << "Current Rebate Value: $" << -gold_vec_.at(choice).balance() * (gold_vec_.at(choice).rebate() / 100.0) << endl;
@@ -385,9 +385,9 @@ void CardWork::MonthlyStatement()
             break;
         case 2:
             if (month_choice != 13)
-                cout << "Showing bill for month: " << month_choice_name << endl;
+            cout << "Showing bill for month: " << month_choice_name << endl;
             cout << "Account: " << plat_vec_.at(choice).card_number() << endl;
-            cout << setfill('=') << setw(18) << "" << "transacstion History" << setw(18) << "" << endl << endl;
+            cout << setfill('/') << setw(18) << "" << "transacstion History" << setw(18) << "" << endl << endl;
             plat_vec_.at(choice).CheckDenied();
             for (int i = 0; i < plat_vec_.at(choice).transacs().size(); i++)
             {
@@ -406,7 +406,7 @@ void CardWork::MonthlyStatement()
                     cout << endl;
                 }
             }
-            cout << setfill('=') << setw(56) << " " << endl << endl;
+            cout << setfill('/') << setw(56) << " " << endl << endl;
             cout << "Current Card Balance (before rebate): $" << fixed << setprecision(2) << plat_vec_.at(choice).balance() << endl;
             cout << "Rebate: " << plat_vec_.at(choice).rebate() << "%" << endl;
             cout << "Current Rebate Value: $" << -plat_vec_.at(choice).balance() * (plat_vec_.at(choice).rebate() / 100.0) << endl;
@@ -416,9 +416,9 @@ void CardWork::MonthlyStatement()
             break;
         case 3:
             if (month_choice != 13)
-                cout << "Showing bill for month: " << month_choice_name << endl;
+            cout << "Showing bill for month: " << month_choice_name << endl;
             cout << "Account: " << corp_vec_.at(choice).card_number() << endl;
-            cout << setfill('=') << setw(18) << "" << "transacstion History" << setw(18) << "" << endl << endl;
+            cout << setfill('/') << setw(18) << "" << "transacstion History" << setw(18) << "" << endl << endl;
             corp_vec_.at(choice).CheckDenied();
             for (int i = 0; i < corp_vec_.at(choice).transacs().size(); i++)
             {
@@ -437,7 +437,7 @@ void CardWork::MonthlyStatement()
                     cout << endl;
                 }
             }
-            cout << setfill('=') << setw(56) << " " << endl << endl;
+            cout << setfill('/') << setw(56) << " " << endl << endl;
             cout << "Current Card Balance (before rebate): $" << fixed << setprecision(2) << corp_vec_.at(choice).balance() << endl;
             cout << "Rebate: " << corp_vec_.at(choice).rebate() << "%" << endl;
             cout << "Current Rebate Value: $" << -corp_vec_.at(choice).balance() * (corp_vec_.at(choice).rebate() / 100.0) << endl;
