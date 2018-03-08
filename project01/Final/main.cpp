@@ -70,9 +70,9 @@ int main() {
  
  cout << "What would you like to do?\n";
  
- cout << "[1]---See Denied Transactions\n"
-      << "[2]---See Monthly Billing Statement\n"
-      << "[3]---Exit Program\n";
+ cout << "1 = See Denied Transactions\n"
+      << "2 = See Monthly Billing Statement\n"
+      << "3 = Exit Program\n";
  cin >> choice;
  
  run.Populate(file1, file2);

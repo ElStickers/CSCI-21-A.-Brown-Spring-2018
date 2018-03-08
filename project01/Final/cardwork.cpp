@@ -274,11 +274,11 @@ void CardWork::MonthlyStatement() {
     
     cout << "Which card type would you like to see?" << endl;
     
-    cout << "(1) - Gold" << endl;
+    cout << " 1 = Gold" << endl;
     
-    cout << "(2) - Platinum" << endl;
+    cout << " 2 = Platinum" << endl;
     
-    cout << "(3) - Corporate" << endl;
+    cout << " 3 = Corporate" << endl;
     
     cout << endl << "Selection: ";
     
@@ -323,33 +323,33 @@ void CardWork::MonthlyStatement() {
     
     choice--;
 
-    cout << "Which month would you like to view?" << endl;
+    cout << "Which monthly bill would you like to see?" << endl;
     
-    cout << " (1) - January" << endl;
+    cout << " 1 = January" << endl;
     
-    cout << " (2) - February" << endl;
+    cout << " 2 = February" << endl;
     
-    cout << " (3) - March" << endl;
+    cout << " 3 = March" << endl;
     
-    cout << " (4) - April" << endl;
+    cout << " 4 = April" << endl;
     
-    cout << " (5) - May" << endl;
+    cout << " 5 = May" << endl;
     
-    cout << " (6) - June" << endl;
+    cout << " 6 = June" << endl;
     
-    cout << " (7) - July" << endl;
+    cout << " 7 = July" << endl;
     
-    cout << " (8) - August" << endl;
+    cout << " 8 = August" << endl;
     
-    cout << " (9) - September" << endl;
+    cout << " 9 = September" << endl;
     
-    cout << "(10) - October" << endl;
+    cout << " 10 = October" << endl;
     
-    cout << "(11) - November" << endl;
+    cout << " 11 = November" << endl;
     
-    cout << "(12) - December" << endl;
+    cout << " 12 = December" << endl;
     
-    cout << "(13) - Full Transacstion History" << endl;
+    cout << " 13 = All Transacstion History" << endl;
     
     cout << endl << "Selection: ";
     

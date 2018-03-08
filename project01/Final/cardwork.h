@@ -47,40 +47,22 @@ public:
 
     CardWork(); //Constructor, sets vectors size to one
 
-    /*
-     * Outputs all denied transactions along with reason for denial
-     */
+     //Takes info from the input file and inserts info into corresponding vector
     void CheckDenied(string transacfile);
     
-    /*
-     * Outputs necessary information about cards in collection
-     */
+    //Takes info from the input file and checks with card vectors to add transaction data to the corresponding card number
     void MonthlyStatement();
-
-    /*
-     * Scans input file, placing information into each Gold, Platinum, or Corporate vector.
-     * Continues resizing vectors until end of file is reached.
-     * @param string filename1 - The first file from which to draw information for each card object
-     * @param string filename2 - The second file from which to draw information for each transaction object
-     */
+    
+    //Displays the transaction data of each card
     void Populate(string cards, string transacs);
     
-    /*
-     * gold_collection_ Accessor
-     * @return vector<Gold> - returns vector
-     */
+    //Accesssor, returns gold card vector
     vector<GoldCard> gold_vec();
     
-    /*
-     * plat_collection_ Accessor
-     * @return vector<Platinum> - returns vector
-     */
+    // Accessor, returns platinum vector
     vector<PlatinumCard> plat_vec();
-    
-    /*
-     * corp_collection_ Accessor
-     * @return vector<Corporate> - returns vector
-     */
+
+    //Accessor, retruns corporate card vector
     vector<CorporateCard> corp_vec();
 
 };
