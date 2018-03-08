@@ -146,6 +146,7 @@ void Collection::MonthlyStatement()
     cout << "(10) - October" << endl;
     cout << "(11) - November" << endl;
     cout << "(12) - December" << endl;
+    cout << "(13) - Full Transaction History" << endl;
     
     cout << endl << "Selection: ";
     int month_choice;
@@ -195,7 +196,7 @@ void Collection::MonthlyStatement()
     {
         case 1: 
             if (month_choice != 13)
-                cout << "Showing bill for month: " << month_choice_name << endl;
+            cout << "Showing bill for month: " << month_choice_name << endl;
             cout << "Account: " << gold_collection_.at(choice).card_number() << endl;
             cout << setfill('=') << setw(18) << "" << "Transaction History" << setw(18) << "" << endl << endl;
             gold_collection_.at(choice).DetermineDenial();
@@ -257,7 +258,7 @@ void Collection::MonthlyStatement()
             break;
         case 3:
             if (month_choice != 13)
-                cout << "Showing bill for month: " << month_choice_name << endl;
+            cout << "Showing bill for month: " << month_choice_name << endl;
             cout << "Account: " << corp_collection_.at(choice).card_number() << endl;
             cout << setfill('=') << setw(18) << "" << "Transaction History" << setw(18) << "" << endl << endl;
             corp_collection_.at(choice).DetermineDenial();

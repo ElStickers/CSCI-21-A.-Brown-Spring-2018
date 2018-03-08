@@ -37,7 +37,7 @@ using std::setw;
 
 class CardWork {
     
-private:
+protected:
     
     vector<GoldCard> gold_vec_;
     vector<PlatinumCard> plat_vec_;

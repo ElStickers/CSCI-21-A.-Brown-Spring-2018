@@ -17,17 +17,20 @@ CardWork::CardWork(){
     
 }
 
-void CardWork::Populate(string cards, string transacs) {
+void CardWork::Populate(string file1, string file2) {
     
-    ifstream fin1(cards);
+    ifstream fin1;
     
-    ifstream fin2(transacs);
+    ifstream fin2;
     
-    if (fin1.fail() || fin2.fail()){
+    fin1.open(file1);
     
-        cout << "Error opening one of the files.\nPlease make sure the names match the file names.\n";
     
-        cout << cards << " " << transacs << endl;
+    if (fin1.fail()) {
+    
+        cout << "Error opening one of the files.\nPlease make sure the names match the file names.\n\n";
+    
+        cout << file1 <<  endl;
     
         exit(1);
     }
@@ -67,6 +70,17 @@ void CardWork::Populate(string cards, string transacs) {
         ss >> temp_bal;
     
         vector<Transac> temp_trans;
+        
+        fin2.open(file2);
+        
+        if (fin1.fail()) {
+    
+        cout << "Error opening one of the files.\nPlease make sure the names match the file names.\n\n";
+    
+        cout << file2 <<  endl;
+    
+        exit(1);
+    }
         
         while (!fin2.eof()) {
             
@@ -148,9 +162,9 @@ void CardWork::Populate(string cards, string transacs) {
     plat_vec_.pop_back();
     corp_vec_.pop_back();
     fin1.close();
-}
+} //Takes info from the input file and inserts info into corresponding vector
 
-void CardWork::CheckDenied(string transacsfile) {
+void CardWork::CheckDenied(string file2) {
     
 for (int i = 0; i < gold_vec_.size(); i++) {
         
@@ -158,7 +172,7 @@ for (int i = 0; i < gold_vec_.size(); i++) {
         
         cout << "Account Holder: " << gold_vec_.at(i).first_name() << gold_vec_.at(i).last_name() << endl;
         
-        //cout << setfill('=') << setw(55) << " " << endl;
+        cout << setfill('/') << setw(55) << " " << endl;
         
         gold_vec_.at(i).CheckDenied();
         
@@ -216,7 +230,7 @@ for (int i = 0; i < gold_vec_.size(); i++) {
             }
         }
         
-        cout << setfill('=') << setw(55) << " " << endl << endl;
+        cout << setfill('/') << setw(55) << " " << endl << endl;
     }
     
     for (int i = 0; i < corp_vec_.size(); i++) {
@@ -252,9 +266,9 @@ for (int i = 0; i < gold_vec_.size(); i++) {
         cout << setfill('/') << setw(55) << " " << endl << endl;
     }
     
-}
+} //Takes info from the input file and checks with card vectors to add transaction data
 
-void CardWork::MonthlyStatement() 
+void CardWork::MonthlyStatement() //Displays the transaction data of each card
 {
     cout << "Which card type would you like to see?" << endl;
     cout << "(1) - Gold" << endl;
@@ -269,7 +283,7 @@ void CardWork::MonthlyStatement()
     {
         for (int i = 0; i < gold_vec_.size(); i++)
         {
-            cout << "(" << i + 1 << ") - " << setw(16) << setfill(' ') << gold_vec_.at(i).card_number() << " - " << gold_vec_.at(i).last_name() << ", " << gold_vec_.at(i).first_name() << endl;
+            cout << "(" << i + 1 << ") - " << setw(16) << setfill(' ') << gold_vec_.at(i).card_number() << " - " << gold_vec_.at(i).first_name() << gold_vec_.at(i).last_name() << endl;
         }
     }
     if (type_choice == 2)
@@ -304,7 +318,7 @@ void CardWork::MonthlyStatement()
     cout << "(10) - October" << endl;
     cout << "(11) - November" << endl;
     cout << "(12) - December" << endl;
-    cout << "(13) - Full transacstion History" << endl;
+    cout << "(13) - Full Transacstion History" << endl;
     
     cout << endl << "Selection: ";
     int month_choice;
@@ -354,7 +368,7 @@ void CardWork::MonthlyStatement()
     {
         case 1: 
             if (month_choice != 13)
-                cout << "Showing bill for month: " << month_choice_name << endl;
+            cout << "Showing bill for month: " << month_choice_name << endl;
             cout << "Account: " << gold_vec_.at(choice).card_number() << endl;
             cout << setfill('/') << setw(18) << "" << "Transacstion History" << setw(18) << "" << endl << endl;
             gold_vec_.at(choice).CheckDenied();
@@ -447,3 +461,24 @@ void CardWork::MonthlyStatement()
             break;
     }
 }
+
+    //Accesssor, returns gold card vector
+    vector<GoldCard> CardWork::gold_vec() {
+        
+        return gold_vec_;
+        
+    }
+    
+    // Accessor, returns platinum vector
+    vector<PlatinumCard> CardWork::plat_vec() {
+        
+        return plat_vec_;
+        
+    }
+    
+    //Accessor, retruns corporate card vector
+    vector<CorporateCard> CardWork::corp_vec() {
+        
+        return corp_vec_;
+        
+    }
