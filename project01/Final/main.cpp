@@ -32,12 +32,44 @@ int main() {
  
  file1.append(".txt");
  file2.append(".txt");
+ int loop = 0;
  
  char status = 'y';
+ 
+ 
  while (toupper(status) == 'Y') {
  
  CardWork run;
- cout << "What is it you would like to do?\n";
+ 
+ if ( loop > 0) {
+ cout << "Would you like to view anything else? (Y/N)" << endl;
+ 
+ char choice2;
+ 
+ cin >> choice2;
+ 
+ if (toupper(choice2) == toupper('y')) {
+  
+  status = 'y';
+  
+ }
+ 
+ else if (toupper(choice2) == toupper('n')) {
+  
+  cout << "Exiting Program...\n";
+ 
+  cout << "GoodBye.\n";
+  
+  status = 'n';
+  
+  return 1;
+  
+ }
+ 
+ }
+ 
+ cout << "What would you like to do?\n";
+ 
  cout << "[1]---See Denied Transactions\n"
       << "[2]---See Monthly Billing Statement\n"
       << "[3]---Exit Program\n";
@@ -46,20 +78,36 @@ int main() {
  run.Populate(file1, file2);
  
  if (choice == 1) {
+  
   run.CheckDenied(file2);
+  
+  loop++;
  }
  else if (choice == 2) {
+  
   run.MonthlyStatement();
+ 
+  loop ++;
+  
  }
+ 
  else if (choice == 3) {
+  
   cout << "Exiting Program...\n";
+ 
   cout << "GoodBye.\n";
+  
   status = 'n';
+ 
+  
  }
+ 
  else if (choice != 1 || 2 || 3) {
+
  cout << "Sorry " << choice << " wasn't an option.\nPlease select one of the options from above to continue.\n";
  
  }
+  
  
  }
  
