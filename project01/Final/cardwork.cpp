@@ -120,41 +120,68 @@ void CardWork::Populate(string file1, string file2) {
             }            
             
         }
+        
         fin2.close();
-        if (temp_type == "gold")
-        {
+        
+        if (temp_type == "gold") {
+            
             gold_vec_.at(gold).set_card_number(temp_credit_num);
+            
             gold_vec_.at(gold).set_first_name(temp_first_name);
+            
             gold_vec_.at(gold).set_last_name(temp_last_name);
+            
             gold_vec_.at(gold).set_card_type(temp_type);
+            
             gold_vec_.at(gold).set_balance(temp_bal);
+            
             gold_vec_.at(gold).Check_Bank(gold_vec_.at(gold).card_number());
+            
             gold_vec_.at(gold).set_transac(temp_trans);
+            
             gold_vec_.resize(gold_vec_.size() + 1);
+            
             gold++;
         }
-        if (temp_type == "platinum")
-        {
+        if (temp_type == "platinum") {
+            
             plat_vec_.at(plat).set_card_number(temp_credit_num);
+            
             plat_vec_.at(plat).set_first_name(temp_first_name);
+            
             plat_vec_.at(plat).set_last_name(temp_last_name);
+            
             plat_vec_.at(plat).set_card_type(temp_type);
+            
             plat_vec_.at(plat).set_balance(temp_bal);
+            
             plat_vec_.at(plat).Check_Bank(plat_vec_.at(plat).card_number());
+            
             plat_vec_.at(plat).set_transac(temp_trans);
+            
             plat_vec_.resize(plat_vec_.size() + 1);
+            
             plat++;
         }
-        if (temp_type == "corporate")
-        {
+        
+        if (temp_type == "corporate") {
+            
             corp_vec_.at(corp).set_card_number(temp_credit_num);
+            
             corp_vec_.at(corp).set_first_name(temp_first_name);
+            
             corp_vec_.at(corp).set_last_name(temp_last_name);
+            
             corp_vec_.at(corp).set_card_type(temp_type);
+            
             corp_vec_.at(corp).set_balance(temp_bal);
+            
             corp_vec_.at(corp).Check_Bank(corp_vec_.at(corp).card_number());
+            
             corp_vec_.at(corp).set_transac(temp_trans);
+            
             corp_vec_.resize(corp_vec_.size() + 1);
+            
             corp++;
         }
     }
@@ -325,31 +352,31 @@ void CardWork::MonthlyStatement() {
 
     cout << "Which monthly bill would you like to see?" << endl;
     
-    cout << " 1 = January" << endl;
+    cout << " 1 = Jan" << endl;
     
-    cout << " 2 = February" << endl;
+    cout << " 2 = Feb" << endl;
     
-    cout << " 3 = March" << endl;
+    cout << " 3 = Mar" << endl;
     
-    cout << " 4 = April" << endl;
+    cout << " 4 = Apr" << endl;
     
     cout << " 5 = May" << endl;
     
-    cout << " 6 = June" << endl;
+    cout << " 6 = Jun" << endl;
     
-    cout << " 7 = July" << endl;
+    cout << " 7 = Jul" << endl;
     
-    cout << " 8 = August" << endl;
+    cout << " 8 = Aug" << endl;
     
-    cout << " 9 = September" << endl;
+    cout << " 9 = Sep" << endl;
     
-    cout << " 10 = October" << endl;
+    cout << " 10 = Oct" << endl;
     
-    cout << " 11 = November" << endl;
+    cout << " 11 = Nov" << endl;
     
-    cout << " 12 = December" << endl;
+    cout << " 12 = Dec" << endl;
     
-    cout << " 13 = All Transacstion History" << endl;
+    cout << " 13 = Yearly Transacstion History" << endl;
     
     cout << endl << "Selection: ";
     
@@ -362,19 +389,19 @@ void CardWork::MonthlyStatement() {
     switch (month_choice) {
         
         case 1:
-            month_choice_name = "January";
+            month_choice_name = "Jan";
             break;
         
         case 2:
-            month_choice_name = "February";
+            month_choice_name = "Feb";
             break;
         
         case 3:
-            month_choice_name = "March";
+            month_choice_name = "Mar";
             break;
         
         case 4:
-            month_choice_name = "April";
+            month_choice_name = "Apr";
             break;
         
         case 5:
@@ -382,31 +409,31 @@ void CardWork::MonthlyStatement() {
             break;
         
         case 6:
-            month_choice_name = "June";
+            month_choice_name = "Jun";
             break;
         
         case 7:
-            month_choice_name = "July";
+            month_choice_name = "Jul";
             break;
         
         case 8:
-            month_choice_name = "August";
+            month_choice_name = "Aug";
             break;
         
         case 9:
-            month_choice_name = "September";
+            month_choice_name = "Sep";
             break;
         
         case 10:
-            month_choice_name = "October";
+            month_choice_name = "Oct";
             break;
         
         case 11:
-            month_choice_name = "November";
+            month_choice_name = "Nov";
             break;
         
         case 12:
-            month_choice_name = "December";
+            month_choice_name = "Dec";
             break;
     }
     
@@ -454,13 +481,13 @@ void CardWork::MonthlyStatement() {
             
             cout << setfill('/') << setw(56) << " " << endl << endl;
             
-            cout << "Current Card Balance (before rebate): $" << fixed << setprecision(2) << gold_vec_.at(choice).balance() << endl;
+            cout << "Card Balance Before Rebate: $" << fixed << setprecision(2) << gold_vec_.at(choice).balance() << endl;
             
             cout << "Rebate: " << gold_vec_.at(choice).rebate() << "%" << endl;
             
             cout << "Current Rebate Value: $" << -gold_vec_.at(choice).balance() * (gold_vec_.at(choice).rebate() / 100.0) << endl;
             
-            cout << "Current Card Balance (after rebate): $" << gold_vec_.at(choice).balance() + (-gold_vec_.at(choice).balance() * (gold_vec_.at(choice).rebate() / 100.0)) << endl;
+            cout << "Card Balance After Rebate: $" << gold_vec_.at(choice).balance() + (-gold_vec_.at(choice).balance() * (gold_vec_.at(choice).rebate() / 100.0)) << endl;
             
             if (-(gold_vec_.at(choice).balance() + (-gold_vec_.at(choice).balance() * (gold_vec_.at(choice).rebate() / 100.0))) > gold_vec_.at(choice).credit_amount())
             cout << "Warning: This account is overdrafted in the amount of $" << (gold_vec_.at(choice).balance() + (-gold_vec_.at(choice).balance() * (gold_vec_.at(choice).rebate() / 100.0))) + gold_vec_.at(choice).credit_amount() << endl;
@@ -510,13 +537,13 @@ void CardWork::MonthlyStatement() {
             
             cout << setfill('/') << setw(56) << " " << endl << endl;
             
-            cout << "Current Card Balance (before rebate): $" << fixed << setprecision(2) << plat_vec_.at(choice).balance() << endl;
+            cout << "Card Balance Before Rebate: $" << fixed << setprecision(2) << plat_vec_.at(choice).balance() << endl;
             
             cout << "Rebate: " << plat_vec_.at(choice).rebate() << "%" << endl;
             
             cout << "Current Rebate Value: $" << -plat_vec_.at(choice).balance() * (plat_vec_.at(choice).rebate() / 100.0) << endl;
             
-            cout << "Current Card Balance (after rebate): $" << plat_vec_.at(choice).balance() + (-plat_vec_.at(choice).balance() * (plat_vec_.at(choice).rebate() / 100.0)) << endl;
+            cout << "Card Balance After Rebate: $" << plat_vec_.at(choice).balance() + (-plat_vec_.at(choice).balance() * (plat_vec_.at(choice).rebate() / 100.0)) << endl;
             
             if (-(plat_vec_.at(choice).balance() + (-plat_vec_.at(choice).balance() * (plat_vec_.at(choice).rebate() / 100.0))) > plat_vec_.at(choice).credit_amount())
             
@@ -561,19 +588,20 @@ void CardWork::MonthlyStatement() {
                     if (corp_vec_.at(choice).transacs().at(i).denied())
                     
                     cout << "transacstion Denied. Overdraft limit of $" << corp_vec_.at(choice).overdraft_allowance() << " exceeded" << endl;
+                    
                     cout << endl;
                 }
             }
             
             cout << setfill('/') << setw(56) << " " << endl << endl;
             
-            cout << "Current Card Balance (before rebate): $" << fixed << setprecision(2) << corp_vec_.at(choice).balance() << endl;
+            cout << "Card Balance Before Rebate: $" << fixed << setprecision(2) << corp_vec_.at(choice).balance() << endl;
             
             cout << "Rebate: " << corp_vec_.at(choice).rebate() << "%" << endl;
             
             cout << "Current Rebate Value: $" << -corp_vec_.at(choice).balance() * (corp_vec_.at(choice).rebate() / 100.0) << endl;
             
-            cout << "Current Card Balance (after rebate): $" << corp_vec_.at(choice).balance() + (-corp_vec_.at(choice).balance() * (corp_vec_.at(choice).rebate() / 100.0)) << endl;
+            cout << "Card Balance After Rebate: $" << corp_vec_.at(choice).balance() + (-corp_vec_.at(choice).balance() * (corp_vec_.at(choice).rebate() / 100.0)) << endl;
             
             if (-(corp_vec_.at(choice).balance() + (-corp_vec_.at(choice).balance() * (corp_vec_.at(choice).rebate() / 100.0))) > corp_vec_.at(choice).credit_amount())
             
