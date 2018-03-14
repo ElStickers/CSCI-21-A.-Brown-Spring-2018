@@ -14,3 +14,4 @@ challenge4.o: challenge4.cpp
 
 clean:
 	rm -rf *.o
+	

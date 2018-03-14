@@ -4,7 +4,7 @@
 
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include "challenge4.cpp"
+#include "challenge4.h"
 
 /*
  * Unit test. Do not alter.
