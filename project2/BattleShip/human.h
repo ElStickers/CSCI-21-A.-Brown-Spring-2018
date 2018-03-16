@@ -8,7 +8,7 @@
  #ifndef HUMAN_H
  #define HUMAN_H
  
- #inlcude <iostream>
+ #include <iostream>
  
  using namespace std;
  
@@ -19,9 +19,11 @@
   
   */
   
-class human {
+class human
+{
  
- protected:
+ private:
+  int ships_still_swiming();
  
  public:
  

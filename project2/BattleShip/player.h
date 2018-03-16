@@ -19,12 +19,15 @@
   
   */
   
-class player {
+class player
+{
  
  protected:
  
  
  public:
+ 
+ void Shoot();
  
 }
  
