@@ -7,7 +7,7 @@ int main()
     
     Board();
     
-    //cout << board_layout();
+    cout << board_layout();
     
-    PrintBoard();
+    begin.PrintBoard();
 }

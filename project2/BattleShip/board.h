@@ -47,7 +47,9 @@ class Board
   
       vector<char> board_layout(); //Accesor, Returns the board layout/vector
   
-      int ships_still_swiming(); //Accesor, returns the amount of ships that are still swimming aka still alive
+      void ships_still_swiming(); //Accesor, returns the amount of ships that are still swimming aka still alive
+      
+      void CountShips(); //Iterates through vector looking for S or ship locations available to hit.
   
       void CreateGameBoard(); //Reads the board file and creates the board that you pick.
   

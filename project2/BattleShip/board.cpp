@@ -26,15 +26,39 @@ vector<char> Board::board_layout()
 }
 
 //Accesor, returns the amount of ships that are still swimming aka still alive
-int Board::ships_still_swiming()
+void Board::ships_still_swiming()
 {
-    return ships_still_swiming_;
+    int ships = ships_still_swiming_;
+    cout << "There are " << ships << "ship targets left on the board.";
+}
+
+//Iterates through vector looking for S or ship locations available to hit.
+void Board::CountShips()
+{
+    Board begin;
+    
+    int temp = 0;
+    
+    int size = board_.size();
+    
+    for(int i = 0; i < size; i++)
+    {
+        if(tolower(board_.at(i)) == 's' )
+        {
+            temp++;
+        }
+    }
+    
+    begin.set_ships_still_swimming(temp);
+    
 }
 
 //Reads the board file and creates the board that you pick.
 void Board::CreateGameBoard()
 {
     Board begin;
+    
+    Board();
     
     bool open = false;
 
@@ -81,7 +105,9 @@ void Board::CreateGameBoard()
         
         getline(filein, input);
         
-        if(row % 2 == 1)
+        cout << input << endl;
+        
+        if(row % 2 == 1 )
         {
             stringstream space(input);
             
@@ -93,7 +119,7 @@ void Board::CreateGameBoard()
                 
                 if(board_space == 'S')
                 {
-                    PostAction(array_position, 'S');
+                    begin.PostAction(array_position, 'S');
                 }
                 array_position++;
             }
@@ -103,6 +129,8 @@ void Board::CreateGameBoard()
     //sleep(2);
     
     cout << "Board created.\n\n";
+    
+    begin.PrintBoard();
 }
 
 //Prints out the board that you selected showing you its current state during the game.
@@ -112,11 +140,11 @@ void Board::PrintBoard()
     
     for(int i = 0; i < 10; i++)
     {
-        cout << " " << i;
+        cout << "  " << i;
         
         if(i == 9)
         {
-            cout << endl;
+            cout << endl << endl;
         }
     }
     
@@ -130,11 +158,11 @@ void Board::PrintBoard()
         
         for(int col = 0; col < 10; col++)
         {
-            cout << " " << board_.at((row * 10) + col);
+            cout << "  " << board_.at((row * 10) + col);
             
             if(col == 9)
             {
-                cout << endl;
+                cout << endl << endl;
             }
         }
     }

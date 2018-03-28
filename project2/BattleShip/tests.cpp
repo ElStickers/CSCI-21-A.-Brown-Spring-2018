@@ -66,7 +66,7 @@ int main()
         
         getline(filein, input);
         
-        cout << input << endl;
+        //cout << input << endl;
         
         if(row % 2 == 1 )
         {
@@ -92,4 +92,8 @@ int main()
     cout << "Board created.\n\n";
     
     begin.PrintBoard();
+    
+    begin.CountShips();
+    
+    begin.ships_still_swiming();
 }
