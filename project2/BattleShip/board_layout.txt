@@ -1,21 +1,19 @@
-  0 1 2 3 4 5 6 7 8 9
+o o S o o o o o o o
 
-A o o S o o o o o o o
+o o S o o o o o o o
 
-B o o S o o o o o o o
+o o o o o o o o o S
 
-C o o o o o o o o o S
+o o o o o o S o o S
 
-D o o o o o o S o o S
+o o o o o o S o o S
 
-E o o o o o o S o o S
+o o o o o o S o o S
 
-F o o o o o o S o o S
+S S S o o o S o o o
 
-G S S S o o o S o o o
+S o o o o o S o o o
 
-H S o o o o o S o o o
+S o o o o o o o o o
 
-I S o o o o o o o o o
-
-J S o o o o o o o o o
+S o o o o o o o o o

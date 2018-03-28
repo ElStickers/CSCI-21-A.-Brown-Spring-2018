@@ -1,4 +1,4 @@
-//#include "board.h"
+#include "board.h"
 #include "board.cpp"
 
 int main()
@@ -7,7 +7,7 @@ int main()
     
     Board();
     
-    cout << board_layout();
+    //cout << board_layout();
     
-    //PrintBoard();
+    PrintBoard();
 }

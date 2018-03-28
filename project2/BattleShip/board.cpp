@@ -122,17 +122,17 @@ void Board::PrintBoard()
     
     char label = 'A';
     
-    for(int col = 0; col < 10; col ++)
+    for(int row = 0; row < 10; row ++)
     {
         cout << label;
         
         label++;
         
-        for(int row = 0; row < 10; row++)
+        for(int col = 0; col < 10; col++)
         {
             cout << " " << board_.at((row * 10) + col);
             
-            if(row == 9)
+            if(col == 9)
             {
                 cout << endl;
             }

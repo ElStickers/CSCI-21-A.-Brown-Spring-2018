@@ -68,7 +68,7 @@ int main()
         
         cout << input << endl;
         
-        if(row % 2 == 1)
+        if(row % 2 == 1 )
         {
             stringstream space(input);
             
