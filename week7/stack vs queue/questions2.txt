@@ -1,0 +1,25 @@
+Question #15.2.1: Suppose the words in the sentence "Madam, I'm Adam." were pushed one after the other onto the same queue, and then they were printed as they were popped off. What would be printed?
+    Madam, I'm Adam.
+    
+Question #15.2.2: What will the (eventual) program do in general to any sequence of words?
+    It will print the word that is first at any given moment.
+    
+Question #15.2.3: What is the behavior of this program?
+    It is the oposite of the stack program. This program prints the item that has been in the queue the "longest".
+    
+Question #15.2.4: What are the objects needed in the program?
+    A queue, a string and the input file.
+    
+Question #15.2.5: What are the operations needed in the program? Similar to Experiment #1, you can ignore the old, familiar input/output operations.
+    push() to populate the queue and pop() or front() to output from the queue
+    
+Question #15.2.6: What is the algorithm for this program?
+    Experiment#2.cpp
+    
+Question #15.2.7: How closely did your prediction match the actual outcome?
+    100%
+
+Question #15.2.8: How does FIFO explain the behavior you see from your program?
+    FIFO means that the first thing to enter a queue will be the first thing to leave the queue
+    Sort of like a line at a store or movie for example,
+    The people who enter the line first will be helped first.
