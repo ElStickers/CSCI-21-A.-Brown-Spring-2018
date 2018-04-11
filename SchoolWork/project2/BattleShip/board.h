@@ -55,7 +55,7 @@ class Board
       
       void set_ships_still_swimming(int ships_swiming); //Sets the number of ship positions that haven't bit hit.
 
-      void CreateGameBoard(); //Reads the board file and creates the board that you pick.
+      void CreateGameBoard(string board_file); //Reads the board file and creates the board that you pick.
   
       void PrintBoard(); //Prints out the board that you selected showing you its current state during the game.
   

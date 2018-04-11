@@ -270,5 +270,16 @@
  
  void Human::AttackResult()
  {
-     
+     if(Comp_Board_.board_layout().at(target_) == 'S')
+     {
+         cout << "Boss, we've hit an enemy ship" << endl;
+         
+         Board set;
+         
+         set.PostAction(target_, 'H');
+     }
+     else if(Comp_Board_.board_layout().at(target_) == 'H')
+     {
+         cout << "Boss...we've already targeted that location. Please choose your shots more carefully next time." << endl;
+     }
  }

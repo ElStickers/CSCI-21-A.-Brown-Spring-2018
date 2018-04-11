@@ -78,7 +78,7 @@ void Board::set_ships_still_swimming(int ships_swiming)
 }
 
 //Reads the board file and creates the board that you pick.
-void Board::CreateGameBoard()
+void Board::CreateGameBoard(string board_file)
 {
     Board begin;
     
@@ -87,6 +87,8 @@ void Board::CreateGameBoard()
     bool open = false;
 
     string filename;
+    
+    filename = board_file;
 
     ifstream filein;
 
@@ -94,9 +96,9 @@ void Board::CreateGameBoard()
     {
         cout << "Please enter the name of the GameBoard File you would like to use.\nPlease do not include extensions. (ie. .txt)\n";
         
-        cin >> filename;
+        //cin >> filename;
         
-        filename.append(".txt"); //if not a txt extension, erase this line and type in the file name inlcuding the extension when prompted.
+        //filename.append(".txt"); //if not a txt extension, erase this line and type in the file name inlcuding the extension when prompted.
         
         filein.open(filename);
         
@@ -154,7 +156,7 @@ void Board::CreateGameBoard()
     
     cout << "Board created.\n\n";
     
-    begin.PrintBoard();
+    //begin.PrintBoard();
 }
 
 //Prints out the board that you selected showing you its current state during the game.
@@ -164,11 +166,11 @@ void Board::PrintBoard()
     
     for(int i = 0; i < 10; i++)
     {
-        cout << "  " << i;
+        cout << " " << i;
         
         if(i == 9)
         {
-            cout << endl << endl;
+            cout << endl;
         }
     }
     
@@ -182,14 +184,16 @@ void Board::PrintBoard()
         
         for(int col = 0; col < 10; col++)
         {
-            cout << "  " << board_.at((row * 10) + col);
+            cout << " " << board_.at((row * 10) + col);
             
             if(col == 9)
             {
-                cout << endl << endl;
+                cout << endl;
             }
         }
     }
+    
+    cout << endl;
 }
 
 //Takes in user action (position of attack choice) and changes the display accordingly M = miss, o = nothing, H = hit, S = Ship.
@@ -232,6 +236,33 @@ void Board::Welcome()
             cout << temp << endl;
         }
     }
+        string filename;
+    // while (open != true)
+    // {
+        cout << "Please enter the name of the GameBoard File you would like to use.\nPlease do not include extensions. (ie. .txt)\n";
+        
+        cin >> filename;
+        
+        filename.append(".txt"); //if not a txt extension, erase this line and type in the file name inlcuding the extension when prompted.
+        
+        CreateGameBoard(filename);
+        
+        // filein.open(filename);
+        
+        // if(!filein.good())
+        // {
+        //     cout << "\nError: File " << filename << " was not found.\nPlease make sure your spelling is correct and double check that" <<
+        //             " the file is in the dierectory and please try again.\n\n";
+        // }
+        // else
+        // {
+        //     cout << "\nFile found.\n\n";
+        //     //sleep(1);
+        //     cout << "Please wait while the file is opened.\n\n";
+        //     //sleep(2);
+        //     open = true;
+        // }
+//     }
 }
 
 void Board::Victory()

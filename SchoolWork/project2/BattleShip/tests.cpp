@@ -23,12 +23,15 @@ int main()
     
     start.Welcome();
     
-    start.CreateGameBoard();
+    //start.CreateGameBoard();
+    
+    start.PrintBoard();
     
     Human get;
     
     get.GetTarget();
     
+    get.AttackResult();
 }
     
 
